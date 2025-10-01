@@ -19,8 +19,6 @@ export class AuthService {
   constructor(private router: Router) {}
 
   public loginUser(email: string, password: string): Observable<User> {
-    console.log('here in auth login function');
-
     if (!email || !password) return throwError(() => new Error('Email or password not provided!'));
 
     this.router.navigate(['dashboard']);
@@ -31,6 +29,7 @@ export class AuthService {
     if (!username || !email || !password)
       return throwError(() => new Error('Email, username or password not provided!'));
 
+    this.router.navigate(['dashboard']);
     return of(DUMMY_USER);
   }
 

@@ -15,7 +15,7 @@ import { loginUser } from '../../core/store/user/user.actions';
 export class LoginPageComponent {
   protected form: FormGroup;
 
-  constructor(private store: Store) {
+  constructor(private readonly store: Store) {
     this.form = new FormGroup({
       email: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required),

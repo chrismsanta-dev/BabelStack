@@ -15,4 +15,10 @@ export const routes: Routes = [
       import('./pages/login-page/login-page.component').then((c) => c.LoginPageComponent),
     canActivate: [],
   },
+  {
+    path: 'register',
+    loadComponent: () =>
+      import('./pages/register-page/register-page.component').then((c) => c.RegisterPageComponent),
+    canActivate: [],
+  },
 ];
