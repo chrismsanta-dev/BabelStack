@@ -4,18 +4,18 @@ import { User } from '../../models/user.model';
 // LOGIN
 export const loginUser = createAction(
   '[User] Login User',
-  props<{ username: string; password: string }>()
+  props<{ email: string; password: string }>()
 );
-export const loginUserSuccess = createAction('[User] Login User Success', props<{ user: User }>);
+export const loginUserSuccess = createAction('[User] Login User Success', props<{ user: User }>());
 export const loginUserFailure = createAction(
   '[User] Login User Failure',
-  props<{ error: Error | undefined }>
+  props<{ error: Error | undefined }>()
 );
 
 // REGISTRATION
 export const registerUser = createAction(
   '[USER] Register User',
-  props<{ username: string; email: string; password: string }>
+  props<{ username: string; email: string; password: string }>()
 );
 export const registerUserSuccess = createAction(
   '[User] Register User Success',
