@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { User } from '../../models/user.model';
-import { Observable, of } from 'rxjs';
+import { Observable, of, throwError } from 'rxjs';
+import { Router } from '@angular/router';
 
 const DUMMY_USER: User = {
   id: '123456',
@@ -15,15 +16,20 @@ const DUMMY_USER: User = {
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  public loginUser(email: string, password: string): Observable<User> {
-    if (!email || !password) throw new Error('Email or password not provided!');
+  constructor(private router: Router) {}
 
+  public loginUser(email: string, password: string): Observable<User> {
+    console.log('here in auth login function');
+
+    if (!email || !password) return throwError(() => new Error('Email or password not provided!'));
+
+    this.router.navigate(['dashboard']);
     return of(DUMMY_USER);
   }
 
   public registerUser(username: string, email: string, password: string): Observable<User> {
     if (!username || !email || !password)
-      throw new Error('Email, username or password not provided!');
+      return throwError(() => new Error('Email, username or password not provided!'));
 
     return of(DUMMY_USER);
   }

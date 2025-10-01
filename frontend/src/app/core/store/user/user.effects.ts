@@ -12,7 +12,7 @@ import {
   registerUserFailure,
   registerUserSuccess,
 } from './user.actions';
-import { catchError, map, of, switchMap } from 'rxjs';
+import { catchError, map, of, switchMap, tap } from 'rxjs';
 import { User } from '../../models/user.model';
 
 @Injectable()

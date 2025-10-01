@@ -1,15 +1,15 @@
 import { TestBed } from '@angular/core/testing';
-import { DashboardComponent } from './dashboard.component';
+import { LoginPageComponent } from './login-page.component';
 
-describe('DashboardComponent', () => {
+describe('LoginPageComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DashboardComponent],
+      imports: [LoginPageComponent],
     }).compileComponents();
   });
 
-  it('should create the dashboard', () => {
-    const fixture = TestBed.createComponent(DashboardComponent);
+  it('should create the login page', () => {
+    const fixture = TestBed.createComponent(LoginPageComponent);
     const component = fixture.componentInstance;
     expect(component).toBeTruthy();
   });

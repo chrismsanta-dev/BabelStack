@@ -1,0 +1,18 @@
+<div class="container flex content-center justify-center">
+  <form [formGroup]="form" class="shadow-xs">
+    <h1 class="title">Login</h1>
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput type="text" formControlName="email" name="email" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input matInput type="password" formControlName="password" name="password" />
+    </mat-form-field>
+    <button matButton="tonal" type="button" (click)="login()">Login</button>
+    <hr />
+    <div class="text-md">
+      Don't have an account yet? <a class="cursor-pointer font-semibold">Signup now!</a>
+    </div>
+  </form>
+</div>
