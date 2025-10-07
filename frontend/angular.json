@@ -25,12 +25,13 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/assets"
               }
             ],
-            "styles": [
-              "src/custom-theme.scss",
-              "src/styles.css"
-            ]
+            "styles": ["src/custom-theme.scss", "src/styles.css"]
           },
           "configurations": {
             "production": {

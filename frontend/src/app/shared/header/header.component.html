@@ -1,7 +1,7 @@
 <div class="min-w-100 h-14 bg-white shadow-2xs flex items-center flex-row">
   <div class="container flex items-center flex-row justify-between">
-    <a class="text-2xl cursor-pointer" routerLink="dashboard">BabelStack</a>
-    <div class="flex flex-row items-center justify-center gap-2">
+    <a class="text-3xl font-bold cursor-pointer" routerLink="dashboard">BabelStack</a>
+    <div class="flex text-lg flex-row items-center justify-center gap-3">
       @if (!user()) {
       <a class="cursor-pointer" routerLink="login">Login</a>/
       <a class="cursor-pointer" routerLink="register">Register</a>
@@ -9,6 +9,13 @@
       <a class="cursor-pointer" routerLink="library">Library</a>
       <a class="cursor-pointer" routerLink="wishlist">Wishlist</a>
       <a class="cursor-pointer" routerLink="friends">Friends</a>
+      <button matIconButton [matMenuTriggerFor]="accountMenu">
+        <img src="user-icon.png" alt="user-icon" />
+      </button>
+      <mat-menu #accountMenu="matMenu">
+        <a routerLink="account" mat-menu-item>Account</a>
+        <a (click)="logout()" mat-menu-item>Logout</a>
+      </mat-menu>
       }
     </div>
   </div>
