@@ -34,6 +34,7 @@ export class AuthService {
   }
 
   public logoutUser(): Observable<boolean> {
+    this.router.navigate(['login']);
     return of(true);
   }
 }

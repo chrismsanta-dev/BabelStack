@@ -1,0 +1,12 @@
+<div class="bg-white pb-4 px-4 pt-1 rounded-md shadow-md h-full">
+  <section class="flex flex-row justify-between items-center">
+    @if (title()) {
+    <h1 class="text-lg font-medium">{{ title() }}</h1>
+    } @if(action()) {
+    <button matButton type="button" class="mr-[-12px]" (click)="onActionClick.emit()">
+      {{ action() }}
+    </button>
+    }
+  </section>
+  <ng-content></ng-content>
+</div>
